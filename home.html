@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1><u>Risk Assessment Model for Port Biological Invasion</u></h1>
+<form action = '/data'>
+    <h1>Probability of Alien Species</h1>
+    <div>
+        <p1>Enter the Distance (d<sub>ij</sub>) from the donor port to the recipient port </label>
+        <input type="number" step="any"  name = "distance" required></input>
+    </div>
+    <div>
+        <p2>Enter the Shape Parameter (&#946;) (default value is 8) </label>
+        <input type= "number" step="any" value=8 name = "shapeParameter" required></input>
+    </div>
+    <div>
+        <p3>Enter the characteristic Geographic Scale (&#978; ) (default value is 1000) </label>
+        <input type="number" step="any" value=1000 name="geoScale" required></input> 
+    </div>
+    <h1>Probability of Introduction</h1>
+            <div>
+                <label>Enter the Characterstic Constant (&#955;) (default value is 0.002m<sup>-3</sup>), input it here </label>
+                <input type="number" step="any" value=0.002 name = "cc" required></input>
+            </div>
+            <div>
+                <label>Enter the Mortality Rate (&#956;) ((default value is 0.02/day) </label>
+                <input type="number" step="any" value=0.02 name="moralityRate" required></input>
+            </div>
+            <div>
+                <label>Enter the Voyage Time (&#916;T<sub>r</sub>) </label>
+                <input type="number" step="any" name="voyageTime" required></input>
+            </div>
+            <div>
+                <label>Enter the Ballast Water Amount (B<sub>r</sub>) </label> 
+                <input type="number" step="any" name= "ballastAmount" required></input>
+            </div>
+            <div>
+                <label>Enter the p<sub>r</sub> </label> 
+                <input type="number" step="any" name= "pr" required></input>
+            </div>
+    <h1>Probability of Population Establishment</h1>
+            <div>
+                <label>Enter the Basic Probability of Establishment (&#945;) (default value is 0.00015) </label>
+                <input type="number" step="any" value=0.00015 name = "basicProbability" required></input>
+            </div>
+            <div>
+                <label>Enter the Sigma T (&#963;<sub>T</sub>) (default value is 2<sup>o</sup>C) </label>
+                <input type="number" step="any" value=2 name = "sigmaT" required></input>
+            </div>
+            <div>
+                <label>Enter the Sigma S (&#963;<sub>S</sub>) (default value is 10ppt) </label>
+                <input type="number" step="any" value=10 name="sigmaS" required></input>
+            </div>
+            <div>
+                <label>Enter the Difference in Water Temperature (&#916;T<sub>ij</sub>) between donor port and recipient port </label> 
+                <input type="number" step="any" name = "deltaTemp" required></input>
+            </div>
+            <div>
+                <label>Enter the Difference in Water Salinity (&#916;S<sub>ij</sub>) between donor port and recipient port </label> 
+                <input type="number" step="any"  name="deltaSalinity" required></input>
+            </div>
+            <br>
+            <button type="submit" style="height:30px; width: 210px; font-size: 20px">Calculate Probability</button>
+
+</form>
+{% endblock %}
